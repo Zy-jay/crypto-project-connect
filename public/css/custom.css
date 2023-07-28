@@ -1,0 +1,14 @@
+#tokenList {
+  overflow: scroll;
+  max-height: 420px;
+}
+
+#tokenList > div:hover {
+  background: #eee;
+  border-radius: var(--bs-dropdown-border-radius);
+}
+.btn-max{
+  cursor: pointer;
+  z-index: 10;
+  border: none;
+}
