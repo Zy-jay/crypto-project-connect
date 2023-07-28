@@ -5,10 +5,10 @@ import {
 } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/html";
 import { configureChains, createConfig } from "@wagmi/core";
-import { mainnet, arbitrum } from "@wagmi/core/chains";
-import { arbitrumNova } from "@wagmi/chains";
+import {mainnet, arbitrum  } from "@wagmi/core/chains";
+import {arbitrumNova}  from '@wagmi/chains'
 
-export const chains = [mainnet, arbitrum, arbitrumNova];
+export const chains = [mainnet, arbitrum,  arbitrumNova];
 const projectId = "98452b5a49ffeef80b291ec3bddd752b";
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
