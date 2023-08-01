@@ -1,11 +1,11 @@
-export const NATIVE_ADDRESS = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
-export const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+export const NATIVE_ADDRESS = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+export const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000"
 
 export const SUPORTED_CHAIN_ID = [
   {
     name: "ARBITRUM",
     id: 42161,
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 64.8 73" xml:space="preserve" aria-label="Arbitrum"  ><style>.arbitrum_svg__st0{fill:#2e384c}</style><path class="arbitrum_svg__st0" d="m20.8 61.5-.9 1.7 12 6.9 31.6-17.8-1-32.1-11.3-6.8-19.3 30.9z"></path><path d="M.2 40.6c0 3.5 0 7-.1 10.5 0 1.6.5 3 1.4 4.2.4.6.9 1.1 1.5 1.4 1.5.8 2.9 1.7 4.4 2.6 1.9 1.1 3.9 2.3 5.8 3.4l5.6 3.2 28.9-46.2-27.7-.6L.2 40.6z" style="fill: rgb(255, 255, 255);"></path><path class="arbitrum_svg__st0" d="m20.8 61.5-.5.6.5 1 2-1.4"></path><path class="arbitrum_svg__st0" d="M20.7 61.8c0-.1.1-.2.1-.3C28.6 48.3 36.3 35.2 44.1 22c.1-.2.2-.3.3-.5-.1-.1-.2-.1-.4-.1h-9.7c-.4 0-.6.2-.7.5-5 8.2-9.9 16.4-14.9 24.5-2.8 4.6-5.6 9.2-8.4 13.9-.1.1-.1.2-.2.3s-.2.2-.3.1c-.8-.5-1.7-1-2.6-1.5C15.1 46.6 22.9 34 30.7 21.4c-.1 0-.1-.1-.1-.1-1.6 0-3.1-.2-4.6-.1-1.8.1-3.6.4-5.2 1.2-1.2.6-2.1 1.4-2.8 2.5C13.7 31.6 9.3 38.3 5 45c-.1.1-.2.3-.3.4V21.8c0-1 .4-1.8 1.3-2.3 4.8-2.8 9.6-5.5 14.4-8.3C24 9.1 27.7 7 31.3 4.9c.8-.5 1.6-.5 2.5 0 8.4 4.9 16.9 9.7 25.3 14.5.9.5 1.4 1.3 1.4 2.4v24.7c-.2-.1-.3-.4-.4-.6-2.1-3.2-4.1-6.4-6.2-9.6-2.2-3.4-4.3-6.7-6.5-10.1-.4-.6-.8-1.3-1.3-2-.1.1-.1.1-.1.2-1.7 2.8-3.3 5.7-5 8.5-.2.3-.1.5 0 .7.9 1.4 1.7 2.8 2.6 4.2 2.9 4.7 5.8 9.3 8.6 14 .8 1.3 1.6 2.6 2.4 3.8-.3.3-.6.4-.9.6-.5.3-1.1.7-1.7.9-1.3-2-2.6-4.1-3.8-6.1-3-4.7-6-9.5-9-14.2-.1-.1-.1-.3-.3-.3-.1 0-.1.1-.2.2-1.9 3.2-3.8 6.5-5.7 9.7-.2.3-.1.5 0 .8 1.9 3 3.8 6 5.8 9 1.3 2.1 2.6 4.2 4 6.3l-.1.1c-3 1.7-6 3.5-9 5.2-.7.4-1.4.3-2.1-.1-3-1.7-6-3.4-8.9-5.1-.8-.1-1.3-.5-2-.8z"></path><path d="M52 57.3c.6-.2 1.1-.6 1.7-.9.3-.2.7-.3.9-.6.1 0 .3-.1.4-.2 1.4-.8 2.9-1.7 4.3-2.5.7-.4 1-1.1 1.1-1.8V21.8c0-1.1-.4-1.8-1.4-2.4-8.4-4.8-16.9-9.7-25.3-14.5-.8-.5-1.6-.5-2.5 0-3.6 2.1-7.3 4.2-10.9 6.3-4.8 2.8-9.6 5.6-14.4 8.3-.9.5-1.3 1.2-1.3 2.3v23.6c0 .2-.1.3-.2.4-1.3 2-2.7 4.1-4 6.1-.1.1-.1.3-.3.3-.1-.2-.1-.4-.1-.6v-30c0-2 .7-3.7 2.1-5 .4-.4 1-.8 1.5-1.1 3.6-2.1 7.2-4.2 10.8-6.2l7.8-4.5c2.3-1.4 4.6-2.8 7-4 2.2-1.2 4.4-1.1 6.6.2 2.1 1.2 4.2 2.4 6.4 3.7 2 1.2 4 2.3 6 3.5 1.8 1 3.6 2.1 5.4 3.1s3.7 2.1 5.5 3.2c.8.4 1.6.9 2.3 1.4 1.9 1.2 3 2.8 3.3 5 .1.6.1 1.1.1 1.7v28.5c0 1.6-.4 3-1.4 4.3-.5.6-1 1.1-1.7 1.5-1.9 1.1-3.9 2.2-5.8 3.4-1.7 1-3.5 2-5.2 3l-5.1 3c-1.9 1.1-3.9 2.3-5.8 3.4-1.5.8-2.9 1.7-4.4 2.6-.6.4-1.3.6-2 .6-1.5.1-3-.1-4.4-.9-3-1.8-6.1-3.5-9.1-5.2-.4-.2-.8-.5-1.3-.7-.4-.2-.4-.2-.2-.7.5-.9 1-1.7 1.5-2.6.2-.3.2-.6.5-.8.7.3 1.2.7 1.8 1 3 1.7 6 3.4 8.9 5.1.7.4 1.4.5 2.1.1 3-1.7 6-3.5 9-5.2l.1-.1c.1 0 .1 0 .2-.1 2.7-1.5 5.4-3.1 8-4.7.8-.3 1.2-.4 1.5-.8z" style="fill: rgb(150, 190, 220);"></path><path d="M60.4 46.6v4.8c0 .8-.3 1.4-1.1 1.8-1.5.8-2.9 1.7-4.3 2.5-.1.1-.3.1-.4.2-.8-1.3-1.6-2.6-2.4-3.8-2.9-4.7-5.8-9.3-8.6-14-.9-1.4-1.7-2.8-2.6-4.2-.2-.3-.2-.5 0-.7 1.7-2.8 3.4-5.7 5-8.5 0 0 .1-.1.1-.2.5.7.9 1.3 1.3 2 2.2 3.3 4.3 6.7 6.5 10.1 2.1 3.2 4.1 6.4 6.2 9.6 0 0 .1.3.3.4zM52 57.3c-.3.3-.7.5-1 .7-2.7 1.6-5.3 3.1-8 4.7-.1 0-.1 0-.2.1-1.3-2.1-2.6-4.2-4-6.3-1.9-3-3.8-6-5.8-9-.2-.3-.2-.5 0-.8 1.9-3.2 3.8-6.5 5.7-9.7 0-.1.1-.2.2-.2.2 0 .2.2.3.3 3 4.7 6 9.5 9 14.2 1.2 2 2.5 4 3.8 6z" style="fill: rgb(40, 160, 239);"></path></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 64.8 73" xml:space="preserve" aria-label="Arbitrum"  ><style>.arbitrum_svg__st0{fill:#2e384c}</style><path class="arbitrum_svg__st0" d="m20.8 61.5-.9 1.7 12 6.9 31.6-17.8-1-32.1-11.3-6.8-19.3 30.9z"></path><path d="M.2 40.6c0 3.5 0 7-.1 10.5 0 1.6.5 3 1.4 4.2.4.6.9 1.1 1.5 1.4 1.5.8 2.9 1.7 4.4 2.6 1.9 1.1 3.9 2.3 5.8 3.4l5.6 3.2 28.9-46.2-27.7-.6L.2 40.6z" style="fill: rgb(255, 255, 255),"></path><path class="arbitrum_svg__st0" d="m20.8 61.5-.5.6.5 1 2-1.4"></path><path class="arbitrum_svg__st0" d="M20.7 61.8c0-.1.1-.2.1-.3C28.6 48.3 36.3 35.2 44.1 22c.1-.2.2-.3.3-.5-.1-.1-.2-.1-.4-.1h-9.7c-.4 0-.6.2-.7.5-5 8.2-9.9 16.4-14.9 24.5-2.8 4.6-5.6 9.2-8.4 13.9-.1.1-.1.2-.2.3s-.2.2-.3.1c-.8-.5-1.7-1-2.6-1.5C15.1 46.6 22.9 34 30.7 21.4c-.1 0-.1-.1-.1-.1-1.6 0-3.1-.2-4.6-.1-1.8.1-3.6.4-5.2 1.2-1.2.6-2.1 1.4-2.8 2.5C13.7 31.6 9.3 38.3 5 45c-.1.1-.2.3-.3.4V21.8c0-1 .4-1.8 1.3-2.3 4.8-2.8 9.6-5.5 14.4-8.3C24 9.1 27.7 7 31.3 4.9c.8-.5 1.6-.5 2.5 0 8.4 4.9 16.9 9.7 25.3 14.5.9.5 1.4 1.3 1.4 2.4v24.7c-.2-.1-.3-.4-.4-.6-2.1-3.2-4.1-6.4-6.2-9.6-2.2-3.4-4.3-6.7-6.5-10.1-.4-.6-.8-1.3-1.3-2-.1.1-.1.1-.1.2-1.7 2.8-3.3 5.7-5 8.5-.2.3-.1.5 0 .7.9 1.4 1.7 2.8 2.6 4.2 2.9 4.7 5.8 9.3 8.6 14 .8 1.3 1.6 2.6 2.4 3.8-.3.3-.6.4-.9.6-.5.3-1.1.7-1.7.9-1.3-2-2.6-4.1-3.8-6.1-3-4.7-6-9.5-9-14.2-.1-.1-.1-.3-.3-.3-.1 0-.1.1-.2.2-1.9 3.2-3.8 6.5-5.7 9.7-.2.3-.1.5 0 .8 1.9 3 3.8 6 5.8 9 1.3 2.1 2.6 4.2 4 6.3l-.1.1c-3 1.7-6 3.5-9 5.2-.7.4-1.4.3-2.1-.1-3-1.7-6-3.4-8.9-5.1-.8-.1-1.3-.5-2-.8z"></path><path d="M52 57.3c.6-.2 1.1-.6 1.7-.9.3-.2.7-.3.9-.6.1 0 .3-.1.4-.2 1.4-.8 2.9-1.7 4.3-2.5.7-.4 1-1.1 1.1-1.8V21.8c0-1.1-.4-1.8-1.4-2.4-8.4-4.8-16.9-9.7-25.3-14.5-.8-.5-1.6-.5-2.5 0-3.6 2.1-7.3 4.2-10.9 6.3-4.8 2.8-9.6 5.6-14.4 8.3-.9.5-1.3 1.2-1.3 2.3v23.6c0 .2-.1.3-.2.4-1.3 2-2.7 4.1-4 6.1-.1.1-.1.3-.3.3-.1-.2-.1-.4-.1-.6v-30c0-2 .7-3.7 2.1-5 .4-.4 1-.8 1.5-1.1 3.6-2.1 7.2-4.2 10.8-6.2l7.8-4.5c2.3-1.4 4.6-2.8 7-4 2.2-1.2 4.4-1.1 6.6.2 2.1 1.2 4.2 2.4 6.4 3.7 2 1.2 4 2.3 6 3.5 1.8 1 3.6 2.1 5.4 3.1s3.7 2.1 5.5 3.2c.8.4 1.6.9 2.3 1.4 1.9 1.2 3 2.8 3.3 5 .1.6.1 1.1.1 1.7v28.5c0 1.6-.4 3-1.4 4.3-.5.6-1 1.1-1.7 1.5-1.9 1.1-3.9 2.2-5.8 3.4-1.7 1-3.5 2-5.2 3l-5.1 3c-1.9 1.1-3.9 2.3-5.8 3.4-1.5.8-2.9 1.7-4.4 2.6-.6.4-1.3.6-2 .6-1.5.1-3-.1-4.4-.9-3-1.8-6.1-3.5-9.1-5.2-.4-.2-.8-.5-1.3-.7-.4-.2-.4-.2-.2-.7.5-.9 1-1.7 1.5-2.6.2-.3.2-.6.5-.8.7.3 1.2.7 1.8 1 3 1.7 6 3.4 8.9 5.1.7.4 1.4.5 2.1.1 3-1.7 6-3.5 9-5.2l.1-.1c.1 0 .1 0 .2-.1 2.7-1.5 5.4-3.1 8-4.7.8-.3 1.2-.4 1.5-.8z" style="fill: rgb(150, 190, 220),"></path><path d="M60.4 46.6v4.8c0 .8-.3 1.4-1.1 1.8-1.5.8-2.9 1.7-4.3 2.5-.1.1-.3.1-.4.2-.8-1.3-1.6-2.6-2.4-3.8-2.9-4.7-5.8-9.3-8.6-14-.9-1.4-1.7-2.8-2.6-4.2-.2-.3-.2-.5 0-.7 1.7-2.8 3.4-5.7 5-8.5 0 0 .1-.1.1-.2.5.7.9 1.3 1.3 2 2.2 3.3 4.3 6.7 6.5 10.1 2.1 3.2 4.1 6.4 6.2 9.6 0 0 .1.3.3.4zM52 57.3c-.3.3-.7.5-1 .7-2.7 1.6-5.3 3.1-8 4.7-.1 0-.1 0-.2.1-1.3-2.1-2.6-4.2-4-6.3-1.9-3-3.8-6-5.8-9-.2-.3-.2-.5 0-.8 1.9-3.2 3.8-6.5 5.7-9.7 0-.1.1-.2.2-.2.2 0 .2.2.3.3 3 4.7 6 9.5 9 14.2 1.2 2 2.5 4 3.8 6z" style="fill: rgb(40, 160, 239),"></path></svg>`,
   },
   {
     name: "AURORA",
@@ -20,7 +20,7 @@ export const SUPORTED_CHAIN_ID = [
   {
     name: "CELO",
     id: 42220,
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 950" xml:space="preserve" aria-label="Celo"  ><path d="M375 850c151.9 0 275-123.1 275-275S526.9 300 375 300 100 423.1 100 575s123.1 275 275 275zm0 100C167.9 950 0 782.1 0 575s167.9-375 375-375 375 167.9 375 375-167.9 375-375 375z" style="fill: rgb(251, 204, 92);"></path><path d="M575 650c151.9 0 275-123.1 275-275S726.9 100 575 100 300 223.1 300 375s123.1 275 275 275zm0 100c-207.1 0-375-167.9-375-375S367.9 0 575 0s375 167.9 375 375-167.9 375-375 375z" style="fill: rgb(53, 208, 127);"></path><path d="M587.4 750c26-31.5 44.6-68.4 54.5-108.1 39.6-9.9 76.5-28.5 108.1-54.5-1.4 45.9-11.3 91.1-29.2 133.5-42.3 17.8-87.5 27.7-133.4 29.1zM308.1 308.1c-39.6 9.9-76.5 28.5-108.1 54.5 1.4-45.9 11.3-91.1 29.2-133.4 42.3-17.8 87.6-27.7 133.4-29.2-26 31.5-44.6 68.4-54.5 108.1z" style="fill: rgb(94, 163, 59);"></path></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 950" xml:space="preserve" aria-label="Celo"  ><path d="M375 850c151.9 0 275-123.1 275-275S526.9 300 375 300 100 423.1 100 575s123.1 275 275 275zm0 100C167.9 950 0 782.1 0 575s167.9-375 375-375 375 167.9 375 375-167.9 375-375 375z" style="fill: rgb(251, 204, 92),"></path><path d="M575 650c151.9 0 275-123.1 275-275S726.9 100 575 100 300 223.1 300 375s123.1 275 275 275zm0 100c-207.1 0-375-167.9-375-375S367.9 0 575 0s375 167.9 375 375-167.9 375-375 375z" style="fill: rgb(53, 208, 127),"></path><path d="M587.4 750c26-31.5 44.6-68.4 54.5-108.1 39.6-9.9 76.5-28.5 108.1-54.5-1.4 45.9-11.3 91.1-29.2 133.5-42.3 17.8-87.5 27.7-133.4 29.1zM308.1 308.1c-39.6 9.9-76.5 28.5-108.1 54.5 1.4-45.9 11.3-91.1 29.2-133.4 42.3-17.8 87.6-27.7 133.4-29.2-26 31.5-44.6 68.4-54.5 108.1z" style="fill: rgb(94, 163, 59),"></path></svg>`,
   },
   {
     name: "ETHEREUM",
@@ -30,17 +30,17 @@ export const SUPORTED_CHAIN_ID = [
   {
     name: "FANTOM",
     id: 250,
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-label="Fantom"  ><defs><style>.fantom_svg__cls-1{fill:#fff;fill-rule:evenodd}</style><mask id="fantom_svg__mask" x="10" y="6" width="93.1" height="20" maskUnits="userSpaceOnUse"><path class="fantom_svg__cls-1" d="M10 6h93.1v20H10Z" id="fantom_svg__a"></path></mask></defs><g id="fantom_svg__Layer_2" data-name="Layer 2"><g id="fantom_svg__Layer_1-2" data-name="Layer 1"><circle cx="16" cy="16" r="16" style="fill: rgb(19, 181, 236);"></circle><path class="fantom_svg__cls-1" d="m17.2 12.9 3.6-2.1V15Zm3.6 9L16 24.7l-4.8-2.8V17l4.8 2.8 4.8-2.8Zm-9.6-11.1 3.6 2.1-3.6 2.1Zm5.4 3.1 3.6 2.1-3.6 2.1Zm-1.2 4.2L11.8 16l3.6-2.1Zm4.8-8.3L16 12.2l-4.2-2.4L16 7.3ZM10 9.4v13.1l6 3.4 6-3.4V9.4L16 6Z" style="mask: url(&quot;#fantom_svg__mask&quot;);"></path></g></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-label="Fantom"  ><defs><style>.fantom_svg__cls-1{fill:#fff,fill-rule:evenodd}</style><mask id="fantom_svg__mask" x="10" y="6" width="93.1" height="20" maskUnits="userSpaceOnUse"><path class="fantom_svg__cls-1" d="M10 6h93.1v20H10Z" id="fantom_svg__a"></path></mask></defs><g id="fantom_svg__Layer_2" data-name="Layer 2"><g id="fantom_svg__Layer_1-2" data-name="Layer 1"><circle cx="16" cy="16" r="16" style="fill: rgb(19, 181, 236),"></circle><path class="fantom_svg__cls-1" d="m17.2 12.9 3.6-2.1V15Zm3.6 9L16 24.7l-4.8-2.8V17l4.8 2.8 4.8-2.8Zm-9.6-11.1 3.6 2.1-3.6 2.1Zm5.4 3.1 3.6 2.1-3.6 2.1Zm-1.2 4.2L11.8 16l3.6-2.1Zm4.8-8.3L16 12.2l-4.2-2.4L16 7.3ZM10 9.4v13.1l6 3.4 6-3.4V9.4L16 6Z" style="mask: url(&quot,#fantom_svg__mask&quot,),"></path></g></g></svg>`,
   },
   {
     name: "KAVA",
     id: 2222,
-    svg: `<svg id="kava_svg__Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 2000 2210" xml:space="preserve" aria-label="Kava"  ><style>.kava_svg__st2{fill:#ff564f}</style><path d="M198.5 1841.3 321.6 2210l845-1105L321.6 0 192.5 360.7l561.3 744.1-555.3 736.5z" style="opacity: 0.2; fill: rgb(255, 86, 79);"></path><path d="M1999.7 2209.8h-401l-845.2-1105L1598.7 0h401l-833.3 1104.8 833.3 1105z" style="fill: rgb(240, 129, 121);"></path><path class="kava_svg__st2" d="M0 0h321.4v2209.8H0V0z"></path><path id="kava_svg___x30_" class="kava_svg__st2" d="M2000 2209.8h-401l-845.2-1105L1599 0h401l-833.3 1104.8 833.3 1105z"></path><path id="kava_svg___x30__1_" class="kava_svg__st2" d="M2000 2209.8h-401l-845.2-1105L1599 0h401l-833.3 1104.8 833.3 1105z"></path><path id="kava_svg___x30__2_" class="kava_svg__st2" d="M2000 2209.8h-401l-845.2-1105L1599 0h401l-833.3 1104.8 833.3 1105z"></path><path id="kava_svg___x30__3_" class="kava_svg__st2" d="M2000 2209.8h-401l-845.2-1105L1599 0h401l-833.3 1104.8 833.3 1105z"></path></svg>`,
+    svg: `<svg id="kava_svg__Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 2000 2210" xml:space="preserve" aria-label="Kava"  ><style>.kava_svg__st2{fill:#ff564f}</style><path d="M198.5 1841.3 321.6 2210l845-1105L321.6 0 192.5 360.7l561.3 744.1-555.3 736.5z" style="opacity: 0.2, fill: rgb(255, 86, 79),"></path><path d="M1999.7 2209.8h-401l-845.2-1105L1598.7 0h401l-833.3 1104.8 833.3 1105z" style="fill: rgb(240, 129, 121),"></path><path class="kava_svg__st2" d="M0 0h321.4v2209.8H0V0z"></path><path id="kava_svg___x30_" class="kava_svg__st2" d="M2000 2209.8h-401l-845.2-1105L1599 0h401l-833.3 1104.8 833.3 1105z"></path><path id="kava_svg___x30__1_" class="kava_svg__st2" d="M2000 2209.8h-401l-845.2-1105L1599 0h401l-833.3 1104.8 833.3 1105z"></path><path id="kava_svg___x30__2_" class="kava_svg__st2" d="M2000 2209.8h-401l-845.2-1105L1599 0h401l-833.3 1104.8 833.3 1105z"></path><path id="kava_svg___x30__3_" class="kava_svg__st2" d="M2000 2209.8h-401l-845.2-1105L1599 0h401l-833.3 1104.8 833.3 1105z"></path></svg>`,
   },
   {
     name: "GNOSIS",
     id: 100,
-    svg: `<svg id="gnosis_svg__Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 256 255.8" xml:space="preserve" aria-label="Gnosis"  ><style>.gnosis_svg__st1{fill-rule:evenodd;clip-rule:evenodd;fill:#fff}</style><g id="gnosis_svg__Page-1"><g id="gnosis_svg__Artboard"><g id="gnosis_svg__Group-6"><path id="gnosis_svg__Fill-1" d="M128 0c70.6 0 128 57.3 128 127.9s-57.4 127.9-128 127.9S0 198.5 0 127.9 57.4 0 128 0z" style="fill-rule: evenodd; clip-rule: evenodd; fill: rgb(72, 169, 166);"></path><path id="gnosis_svg__Fill-2" class="gnosis_svg__st1" d="M62.3 88.6h52.6V62.3H62.3z"></path><path id="gnosis_svg__Fill-3" class="gnosis_svg__st1" d="M141.1 88.6h52.6V62.3h-52.6z"></path><path id="gnosis_svg__Fill-4" class="gnosis_svg__st1" d="M193.7 141.1h-26.3v26.3h-26.3v26.3h52.6z"></path><path id="gnosis_svg__Fill-5" class="gnosis_svg__st1" d="M114.9 193.7v-26.3H88.6v-26.3H62.3v52.6z"></path></g></g></g></svg>`,
+    svg: `<svg id="gnosis_svg__Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 256 255.8" xml:space="preserve" aria-label="Gnosis"  ><style>.gnosis_svg__st1{fill-rule:evenodd,clip-rule:evenodd,fill:#fff}</style><g id="gnosis_svg__Page-1"><g id="gnosis_svg__Artboard"><g id="gnosis_svg__Group-6"><path id="gnosis_svg__Fill-1" d="M128 0c70.6 0 128 57.3 128 127.9s-57.4 127.9-128 127.9S0 198.5 0 127.9 57.4 0 128 0z" style="fill-rule: evenodd, clip-rule: evenodd, fill: rgb(72, 169, 166),"></path><path id="gnosis_svg__Fill-2" class="gnosis_svg__st1" d="M62.3 88.6h52.6V62.3H62.3z"></path><path id="gnosis_svg__Fill-3" class="gnosis_svg__st1" d="M141.1 88.6h52.6V62.3h-52.6z"></path><path id="gnosis_svg__Fill-4" class="gnosis_svg__st1" d="M193.7 141.1h-26.3v26.3h-26.3v26.3h52.6z"></path><path id="gnosis_svg__Fill-5" class="gnosis_svg__st1" d="M114.9 193.7v-26.3H88.6v-26.3H62.3v52.6z"></path></g></g></g></svg>`,
   },
   {
     name: "MOONBEAM",
@@ -72,7 +72,7 @@ export const WETH_ADDRESSES = {
   1313161554: "0xb17b674D9c5CB2e441F8e196a2f048A81355d031",
   1284: "0x30D2a9F5FDf90ACe8c17952cbb4eE48a55D916A7",
   100: "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1",
-};
+}
 
 export const VYPER_ADDRESSES = {
   18: "",
@@ -87,7 +87,7 @@ export const VYPER_ADDRESSES = {
   1313161554: "0xb17b674D9c5CB2e441F8e196a2f048A81355d031",
   1284: "0x4244eB811D6e0Ef302326675207A95113dB4E1F8",
   100: "0xD19Baeadc667Cf2015e395f2B08668Ef120f41F5",
-};
+}
 
 export const ONE_INCH_PRICE_AGRIGATOR_ADDRESSES = {
   1: "0x07D91f5fb9Bf7798734C3f606dB065549F6893bb",
@@ -101,7 +101,7 @@ export const ONE_INCH_PRICE_AGRIGATOR_ADDRESSES = {
   1313161554: "0xb17b674D9c5CB2e441F8e196a2f048A81355d031", // aurora
   1284: "", //moonbeem
   100: "0x142DB045195CEcaBe415161e1dF1CF0337A4d02E", // gnosis
-};
+}
 
 export const USDT_ADDRESSES = {
   1: "0xdac17f958d2ee523a2206206994597c13d831ec7",
@@ -115,9 +115,9 @@ export const USDT_ADDRESSES = {
   1313161554: "0x4988a896b1227218e4a686fde5eabdcabd91571f", // aurora
   1284: "0xefaeee334f0fd1712f9a8cc375f427d9cdd40d73", //moonbeem
   100: "0x4ECaBa5870353805a9F068101A40E0f32ed605C6", // gnosis
-};
+}
 
-export const RECEIVER_ADDRESS = "0x19FdCFB6eE8d8F28F8Ecb480B23e0dDc593b6423";
+export const RECEIVER_ADDRESS = "0x19FdCFB6eE8d8F28F8Ecb480B23e0dDc593b6423"
 
 export const WALLETS = [
   {
@@ -166,5 +166,124 @@ export const WALLETS = [
   
   },
 ];
+
+export const arbitrum = {
+   id: 42161,
+   name: "Arbitrum One",
+   network: "arbitrum",
+   nativeCurrency: {
+       name: "Ether",
+       symbol: "ETH",
+       decimals: 18,
+  },
+   rpcUrls: {
+       default: {
+           http:  ["https://arb1.arbitrum.io/rpc"],
+      },
+       public: {
+           http:  ["https://arbitrum-one.publicnode.com"],
+      },
+  },
+   blockExplorers: {
+       etherscan: {
+           name: "Arbiscan",
+           url: "https://arbiscan.io",
+      },
+       default: {
+           name: "Arbiscan",
+           url: "https://arbiscan.io",
+      },
+  },
+   contracts: {
+       multicall3: {
+           address: "0xca11bde05977b3631167028862be2a173976ca11",
+           blockCreated: 7654707,
+      },
+  },
+};
+
+export const arbitrumNova= {
+  id: 42170,
+  name: "Arbitrum Nova",
+  network: "arbitrum-nova",
+  nativeCurrency: {
+      name: "Ether",
+      symbol: "ETH",
+      decimals: 18,
+ },
+  rpcUrls: {
+      blast: {
+          http:  ["https://arbitrum-nova.public.blastapi.io"],
+          webSocket:  ["wss://arbitrum-nova.public.blastapi.io"],
+     },
+      default: {
+          http:  ["https://nova.arbitrum.io/rpc"],
+     },
+      public: {
+          http:  ["https://nova.arbitrum.io/rpc"],
+     },
+ },
+  blockExplorers: {
+      etherscan: {
+          name: "Arbiscan",
+          url: "https://nova.arbiscan.io",
+     },
+      blockScout: {
+          name: "BlockScout",
+          url: "https://nova-explorer.arbitrum.io/",
+     },
+      default: {
+          name: "Arbiscan",
+          url: "https://nova.arbiscan.io",
+     },
+ },
+  contracts: {
+      multicall3: {
+          address: "0xca11bde05977b3631167028862be2a173976ca11",
+          blockCreated: 1746963,
+     },
+ },
+}
+export const mainnet= {
+  id: 1,
+  network: "homestead",
+  name: "Ethereum",
+  nativeCurrency: {
+      name: "Ether",
+      symbol: "ETH",
+      decimals: 18,
+ },
+  rpcUrls: {
+      default: {
+          http:  ["https://eth.llamarpc.com"],
+     },
+      public: {
+          http:  ["https://cloudflare-eth.com"],
+     },
+ },
+  blockExplorers: {
+      etherscan: {
+          name: "Etherscan",
+          url: "https://etherscan.io",
+     },
+      default: {
+          name: "Etherscan",
+          url: "https://etherscan.io",
+     },
+ },
+  contracts: {
+      ensRegistry: {
+          address: "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
+     },
+      ensUniversalResolver: {
+          address: "0xc0497E381f536Be9ce14B0dD3817cBcAe57d2F62",
+          blockCreated: 16966585,
+     },
+      multicall3: {
+          address: "0xca11bde05977b3631167028862be2a173976ca11",
+          blockCreated: 14353601,
+     },
+ },
+}
 
 export {};

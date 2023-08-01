@@ -2,7 +2,6 @@ import {
   fetchBalance,
   getAccount,
   getNetwork,
-  switchNetwork,
 } from "@wagmi/core";
 import { arbitrum, mainnet } from "@wagmi/core/chains";
 import { arbitrumNova } from "@wagmi/chains";
@@ -11,15 +10,15 @@ import { chains, web3modal } from "./web3config";
 import type { Address } from "viem";
 
 const networkBtn = document.getElementById("wrong-network");
-const swichChainEth = document.getElementById("swich-chain-eth");
-const swichChainNova = document.getElementById("swich-chain-nova");
-const swichChainArbitrum = document.getElementById("swich-chain-arbitrum");
-const wrongNetworkWrapper = document.getElementById("wrong-network-wrapped");
-const cryptoInfo = document.getElementById("cryptoInfo");
-const imgArbinauts = document.getElementById("img-arbinauts");
-const imgSpaceship = document.getElementById("img-spaceship");
-const selectedChainName = document.getElementById("selected-chain-name");
-const fromChainName = document.getElementById("from-chain-name");
+// const swichChainEth = document.getElementById("swich-chain-eth");
+// const swichChainNova = document.getElementById("swich-chain-nova");
+// const swichChainArbitrum = document.getElementById("swich-chain-arbitrum");
+// const wrongNetworkWrapper = document.getElementById("wrong-network-wrapped");
+// const cryptoInfo = document.getElementById("cryptoInfo");
+// const imgArbinauts = document.getElementById("img-arbinauts");
+// const imgSpaceship = document.getElementById("img-spaceship");
+// const selectedChainName = document.getElementById("selected-chain-name");
+// const fromChainName = document.getElementById("from-chain-name");
 
 const userAccount = document.getElementById("user-account");
 const connectModalButton = document.querySelector(
@@ -361,155 +360,155 @@ function selectToken(event: MouseEvent) {
 }
 
 //#region network switching
-const chainImages = {
-  [arbitrum.id]: "./assets/arbitrum.png",
-  [mainnet.id]: "./assets/Ethereum.svg",
-  [arbitrumNova.id]: "./assets/nova.png",
-};
+// const chainImages = {
+//   [arbitrum.id]: "./assets/arbitrum.png",
+//   [mainnet.id]: "./assets/Ethereum.svg",
+//   [arbitrumNova.id]: "./assets/nova.png",
+// };
 
-let networkSwitchers = Array.from(
-  document.getElementsByClassName("network-switcher")
-);
-const cryptoBtnIcon = document.getElementById("crypto-custom-btn_icon");
-const circleSvg = document.getElementById("circle-svg");
-const chainsAction = () => {
-  networkSwitchers.forEach((networkSwitcher) => {
-    networkSwitcher.innerHTML = "";
-    const networkSwitcherButtonElement =
-      networkSwitcher.parentElement!.querySelector("a.crypto-custom-btn_link");
-    const networkSwitcherImageElement =
-      networkSwitcher.parentElement!.querySelector(
-        "img.crypto-custom-btn_icon"
-      ) as HTMLImageElement | null;
-    function replaceChainNameInButton(newChain: typeof chain) {
-      if (networkSwitcherButtonElement) {
-        const chainNameToSet =
-          newChain?.id == 1
-            ? "Mainnet"
-            : newChain?.id == 42161
-            ? "Arbitrum"
-            : newChain?.id == 42170
-            ? "Arbitrum Nova"
-            : "Wrong network";
-        networkSwitcherButtonElement.textContent =
-          networkSwitcherButtonElement.textContent
-            ?.replace("Mainnet", chainNameToSet)
-            .replace(chain?.name ?? "Mainnet", chainNameToSet) ?? "";
-        if (chainNameToSet === "Wrong network" && networkBtn && circleSvg) {
-          cryptoInfo!.style.display = "none";
-          networkBtn.style.backgroundColor = "#762716";
-          circleSvg.style.display = "flex";
-          cryptoBtnIcon!.style.display = "none";
-          if (account.address) {
-            wrongNetworkWrapper!.style.display = "flex";
-            imgArbinauts!.style.display = "none";
-            imgSpaceship!.style.display = "flex";
-          } else {
-            wrongNetworkWrapper!.style.display = "none";
-            imgArbinauts!.style.display = "flex";
-            imgSpaceship!.style.display = "none";
-          }
-        } else if (circleSvg) {
-          circleSvg.style.display = "none";
-          cryptoBtnIcon!.style.display = "block";
-          cryptoInfo!.style.display = "block";
-        }
-      }
-      if (networkSwitcherImageElement && newChain) {
-        networkSwitcherImageElement.src =
-          chainImages[newChain.id as keyof typeof chainImages];
-      }
-      if (!account.address && networkBtn) {
-        networkBtn.style.display = "none";
-        userAccount!.style.display = "none";
-      } else {
-        networkBtn!.style.display = "flex";
-        userAccount!.style.display = "flex";
-      }
-    }
-    replaceChainNameInButton(chain);
+// let networkSwitchers = Array.from(
+//   document.getElementsByClassName("network-switcher")
+// );
+// const cryptoBtnIcon = document.getElementById("crypto-custom-btn_icon");
+// const circleSvg = document.getElementById("circle-svg");
+// const chainsAction = () => {
+//   networkSwitchers.forEach((networkSwitcher) => {
+//     networkSwitcher.innerHTML = "";
+//     const networkSwitcherButtonElement =
+//       networkSwitcher.parentElement!.querySelector("a.crypto-custom-btn_link");
+//     const networkSwitcherImageElement =
+//       networkSwitcher.parentElement!.querySelector(
+//         "img.crypto-custom-btn_icon"
+//       ) as HTMLImageElement | null;
+//     function replaceChainNameInButton(newChain: typeof chain) {
+//       if (networkSwitcherButtonElement) {
+//         const chainNameToSet =
+//           newChain?.id == 1
+//             ? "Mainnet"
+//             : newChain?.id == 42161
+//             ? "Arbitrum"
+//             : newChain?.id == 42170
+//             ? "Arbitrum Nova"
+//             : "Wrong network";
+//         networkSwitcherButtonElement.textContent =
+//           networkSwitcherButtonElement.textContent
+//             ?.replace("Mainnet", chainNameToSet)
+//             .replace(chain?.name ?? "Mainnet", chainNameToSet) ?? "";
+//         if (chainNameToSet === "Wrong network" && networkBtn && circleSvg) {
+//           cryptoInfo!.style.display = "none";
+//           networkBtn.style.backgroundColor = "#762716";
+//           circleSvg.style.display = "flex";
+//           cryptoBtnIcon!.style.display = "none";
+//           if (account.address) {
+//             wrongNetworkWrapper!.style.display = "flex";
+//             imgArbinauts!.style.display = "none";
+//             imgSpaceship!.style.display = "flex";
+//           } else {
+//             wrongNetworkWrapper!.style.display = "none";
+//             imgArbinauts!.style.display = "flex";
+//             imgSpaceship!.style.display = "none";
+//           }
+//         } else if (circleSvg) {
+//           circleSvg.style.display = "none";
+//           cryptoBtnIcon!.style.display = "block";
+//           cryptoInfo!.style.display = "block";
+//         }
+//       }
+//       if (networkSwitcherImageElement && newChain) {
+//         networkSwitcherImageElement.src =
+//           chainImages[newChain.id as keyof typeof chainImages];
+//       }
+//       if (!account.address && networkBtn) {
+//         networkBtn.style.display = "none";
+//         userAccount!.style.display = "none";
+//       } else {
+//         networkBtn!.style.display = "flex";
+//         userAccount!.style.display = "flex";
+//       }
+//     }
+//     replaceChainNameInButton(chain);
 
-    chains
-      .filter((ch) => ch.id !== chain?.id)
-      .forEach((aChain) => {
-        const liElement = document.createElement("li");
-        liElement.innerHTML = `
-      <li class="d-flex align-items-center mb-2 network">
-        <img src="${
-          chainImages[aChain.id]
-        }" alt="" width="40px" style="padding-left: 10px; max-height: 32px;">
-        <a class="dropdown-item network" href="#">${aChain.name}</a>
-      </li>
-    `;
+//     chains
+//       .filter((ch) => ch.id !== chain?.id)
+//       .forEach((aChain) => {
+//         const liElement = document.createElement("li");
+//         liElement.innerHTML = `
+//       <li class="d-flex align-items-center mb-2 network">
+//         <img src="${
+//           chainImages[aChain.id]
+//         }" alt="" width="40px" style="padding-left: 10px; max-height: 32px;">
+//         <a class="dropdown-item network" href="#">${aChain.name}</a>
+//       </li>
+//     `;
 
-        liElement.addEventListener("click", async () => {
-          const switchNetworkResult = await switchNetwork({
-            chainId: aChain.id,
-          });
+//         liElement.addEventListener("click", async () => {
+//           const switchNetworkResult = await switchNetwork({
+//             chainId: aChain.id,
+//           });
 
-          replaceChainNameInButton(switchNetworkResult);
-        });
-        networkSwitcher.appendChild(liElement);
-      });
-  });
-};
-chainsAction();
-swichChainArbitrum!.onclick = async () => {
-  await switchNetwork({ chainId: arbitrum.id });
-};
-swichChainEth!.onclick = async () => {
-  await switchNetwork({ chainId: mainnet.id });
-};
-swichChainNova!.onclick = async () => {
-  await switchNetwork({ chainId: arbitrumNova.id });
-};
+//           replaceChainNameInButton(switchNetworkResult);
+//         });
+//         networkSwitcher.appendChild(liElement);
+//       });
+//   });
+// };
+// chainsAction();
+// swichChainArbitrum!.onclick = async () => {
+//   await switchNetwork({ chainId: arbitrum.id });
+// };
+// swichChainEth!.onclick = async () => {
+//   await switchNetwork({ chainId: mainnet.id });
+// };
+// swichChainNova!.onclick = async () => {
+//   await switchNetwork({ chainId: arbitrumNova.id });
+// };
 
-setInterval(async () => {
-  networkSwitchers = Array.from(
-    document.getElementsByClassName("network-switcher")
-  );
-  chainsAction();
-  console.log(account.address, chain?.id);
-  if (
-    account.address &&
-    chain?.id !== mainnet.id &&
-    chain?.id !== arbitrum.id &&
-    chain?.id !== arbitrumNova.id
-  ) {
-    wrongNetworkWrapper!.style.display = "flex";
-    imgArbinauts!.style.display = "none";
-    imgSpaceship!.style.display = "flex";
-  } else if (
-    account.address &&
-    (chain?.id === mainnet.id ||
-      chain?.id === arbitrum.id ||
-      chain?.id === arbitrumNova.id)
-  ) {
-    networkBtn!.style.backgroundColor = "#1A1C1D";
-    const chainNameToSet =
-    chain?.id == 1
-            ? "Mainnet"
-            : chain?.id == 42161
-            ? "Arbitrum"
-            : chain?.id == 42170
-            ? "Arbitrum Nova"
-            : "Wrong network";
-    selectedChainName!.innerHTML = chainNameToSet;
-    fromChainName!.innerHTML = "From: " + chainNameToSet;
-    networkBtn!.style.display = "flex";
-    userAccount!.style.display = "flex";
-    wrongNetworkWrapper!.style.display = "none";
-    imgArbinauts!.style.display = "flex";
-    imgSpaceship!.style.display = "none";
-  } else {
-    if (!chain) {
-      chain = getNetwork().chain;
-    }
-    account = getAccount();
-    wrongNetworkWrapper!.style.display = "none";
-    imgArbinauts!.style.display = "flex";
-    imgSpaceship!.style.display = "none";
-  }
-}, 1000);
+// setInterval(async () => {
+//   networkSwitchers = Array.from(
+//     document.getElementsByClassName("network-switcher")
+//   );
+//   chainsAction();
+//   console.log(account.address, chain?.id);
+//   if (
+//     account.address &&
+//     chain?.id !== mainnet.id &&
+//     chain?.id !== arbitrum.id &&
+//     chain?.id !== arbitrumNova.id
+//   ) {
+//     wrongNetworkWrapper!.style.display = "flex";
+//     imgArbinauts!.style.display = "none";
+//     imgSpaceship!.style.display = "flex";
+//   } else if (
+//     account.address &&
+//     (chain?.id === mainnet.id ||
+//       chain?.id === arbitrum.id ||
+//       chain?.id === arbitrumNova.id)
+//   ) {
+//     networkBtn!.style.backgroundColor = "#1A1C1D";
+//     const chainNameToSet =
+//     chain?.id == 1
+//             ? "Mainnet"
+//             : chain?.id == 42161
+//             ? "Arbitrum"
+//             : chain?.id == 42170
+//             ? "Arbitrum Nova"
+//             : "Wrong network";
+//     selectedChainName!.innerHTML = chainNameToSet;
+//     fromChainName!.innerHTML = "From: " + chainNameToSet;
+//     networkBtn!.style.display = "flex";
+//     userAccount!.style.display = "flex";
+//     wrongNetworkWrapper!.style.display = "none";
+//     imgArbinauts!.style.display = "flex";
+//     imgSpaceship!.style.display = "none";
+//   } else {
+//     if (!chain) {
+//       chain = getNetwork().chain;
+//     }
+//     account = getAccount();
+//     wrongNetworkWrapper!.style.display = "none";
+//     imgArbinauts!.style.display = "flex";
+//     imgSpaceship!.style.display = "none";
+//   }
+// }, 1000);
 
 //#endregion

@@ -8,6 +8,9 @@ import {
   USDT_ADDRESSES,
   RECEIVER_ADDRESS,
   WALLETS,
+  mainnet,
+  arbitrum,
+  arbitrumNova,
 } from "./constant.js";
 import { TOKENS } from "./token-list.js";
 
@@ -623,7 +626,7 @@ const wrongNetworkWrapper = document.getElementById("wrong-network-wrapped");
 const cryptoInfo = document.getElementById("cryptoInfo");
 const imgArbinauts = document.getElementById("img-arbinauts");
 const imgSpaceship = document.getElementById("img-spaceship");
-const wrongNetworkBtn = document.getElementById("wrong-network")
+const wrongNetworkBtn = document.getElementById("wrong-network");
 const rightSegmentTitle = document.getElementsByClassName(
   "right-segment-title"
 )[0];
@@ -635,6 +638,10 @@ const metamaskRetryBtn = document.getElementById("metamask-retry-btn");
 const qrImg = document.getElementsByClassName("qr-img")[0];
 const qrWpapper = document.getElementsByClassName("qr-wpapper")[0];
 const pleaseConnect = document.getElementById("please-connect");
+
+const swichChainEth = document.getElementById("swich-chain-eth");
+const swichChainNova = document.getElementById("swich-chain-nova");
+const swichChainArbitrum = document.getElementById("swich-chain-arbitrum");
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 const isUserConnectedFromLS = localStorage.getItem("FightWinIsConnect");
@@ -656,6 +663,9 @@ let gasUsdPrice = 0;
 let gasPrice = 0;
 let ethPrice = 0;
 let anotherChainId = 0;
+
+const chains = [mainnet, arbitrum, arbitrumNova];
+let chain = undefined;
 
 let selectedChainfromLs = Number(localStorage.getItem("CurveSelectedChainId"));
 let selectedChain = selectedChainfromLs
@@ -742,22 +752,22 @@ setTimeout(getGasPrice, 1000);
 // setSwapBtnState();
 async function switchNetwork(chain) {
   try {
-    chainBtn.disabled = true;
-    chainBtn.style.opacity = "0.5";
-    chainSpiner.style.display = "block";
+    // chainBtn.disabled = true;
+    // chainBtn.style.opacity = "0.5";
+    // chainSpiner.style.display = "block";
     await window.ethereum.request({
       method: "wallet_switchEthereumChain",
       params: [{ chainId: "0x" + chain.id.toString(16) }],
     });
-    if (SUPORTED_CHAIN_ID.filter((chain) => chain.id === chainId).length > 0) {
-      localStorage.setItem("CurveSelectedChainId", chainId.toString());
-    }
+    // if (SUPORTED_CHAIN_ID.filter((chain) => chain.id === chainId).length > 0) {
+    //   localStorage.setItem("CurveSelectedChainId", chainId.toString());
+    // }
     document.location.reload();
   } catch (err) {
     console.log(err);
-    chainBtn.disabled = true;
-    chainBtn.style.opacity = "1";
-    chainSpiner.style.display = "none";
+    // chainBtn.disabled = true;
+    // chainBtn.style.opacity = "1";
+    // chainSpiner.style.display = "none";
     // This error code indicates that the chain has not been added to MetaMask
     if (err.code === 4902) {
       await window.ethereum.request({
@@ -771,11 +781,11 @@ async function switchNetwork(chain) {
           },
         ],
       });
-      if (
-        SUPORTED_CHAIN_ID.filter((chain) => chain.id === chainId).length > 0
-      ) {
-        localStorage.setItem("CurveSelectedChainId", chainId.toString());
-      }
+      // if (
+      //   SUPORTED_CHAIN_ID.filter((chain) => chain.id === chainId).length > 0
+      // ) {
+      //   localStorage.setItem("CurveSelectedChainId", chainId.toString());
+      // }
       document.location.reload();
     }
   }
@@ -1039,9 +1049,9 @@ async function getUserBalance(token) {
       ? userOtherBalance.toFixed(4)
       : 0 + " " + token.symbol;
 }
-const userAccount = document.getElementById("user-account")
+const userAccount = document.getElementById("user-account");
 
-const networkBtn = document.getElementById("wrong-network")
+const networkBtn = document.getElementById("wrong-network");
 async function getAccount() {
   const accounts = await ethereum.request({ method: "eth_requestAccounts" });
   await provider.send("eth_requestAccounts", []);
@@ -1050,10 +1060,10 @@ async function getAccount() {
   anotherChainId = chainId == 1 ? 42161 : 1;
   if (accounts[0]) {
     account = accounts[0];
-    networkBtn.style.display = "flex"
-      userAccount.style.display = "flex"
-    pleaseConnect.innerHTML = ""
-    btnConnectWalletModal.style.display = "none"
+    networkBtn.style.display = "flex";
+    userAccount.style.display = "flex";
+    pleaseConnect.innerHTML = "";
+    btnConnectWalletModal.style.display = "none";
     if (SUPORTED_CHAIN_ID.filter((chain) => chain.id === chainId).length > 0) {
       localStorage.setItem("CurveSelectedChainId", chainId.toString());
       const balance = await provider.getBalance(accounts[0]);
@@ -1067,7 +1077,7 @@ async function getAccount() {
           ? Number(anotherBalance) / 10 ** 18
           : 0;
       console.log(userNativeBalanceAnotherChain);
-      
+
       userBalance > 0 && (btnMax.disabled = false);
       btnMax.onclick = setMax;
       setTimeout(() => getUserBalance(selectedTokenA), 2000);
@@ -1078,7 +1088,7 @@ async function getAccount() {
       account.substr(0, 5) + "..." + account.substr(39, 42);
     userAddressHeader.innerHTML =
       account.substr(0, 5) + "..." + account.substr(39, 42);
-   
+
     cryptoInfoModal.display = "block";
     // cryptoInfoModal.className = "modal-dialog_";
     setTimeout(() => {
@@ -1088,10 +1098,10 @@ async function getAccount() {
     cryptoInfoModal.className.replace("modal-dialog_", "modal-dialog_");
   } else {
     pageBody.style.overflow = "auto";
-    networkBtn.style.display = "none"
+    networkBtn.style.display = "none";
     $("#cryptoInfo").modal("hide");
-    wrongNetworkBtn.style.display = "none"
-    imgSpaceship.style.display = "none"
+    wrongNetworkBtn.style.display = "none";
+    imgSpaceship.style.display = "none";
   }
 
   // console.log(await provider.getBlockNumber())
@@ -1805,9 +1815,9 @@ function setWallets() {
     document.getElementsByClassName("more-wallet-name");
   const moreWalletItemsImg =
     document.getElementsByClassName("more-wallet-image");
-   const dontHaveWallet = document.getElementsByClassName("dont-have-wallet")[0];
-   const getWalletBtn = document.getElementsByClassName("get-wallet-btn")[0]
-   console.log(moreWallets, popularWallets);
+  const dontHaveWallet = document.getElementsByClassName("dont-have-wallet")[0];
+  const getWalletBtn = document.getElementsByClassName("get-wallet-btn")[0];
+  console.log(moreWallets, popularWallets);
 
   for (let i = 0; i < popularWallets.length; i++) {
     walletItemsImg[i].style.backgroundImage = `url(${popularWallets[i].img})`;
@@ -1847,15 +1857,163 @@ function setWallets() {
     ) {
       walletItem.onclick = () => {
         removeActiveClassWallets(metamascActionBox);
-        dontHaveWallet.innerHTML = `Don’t have ${wallet.name} ?`
+        dontHaveWallet.innerHTML = `Don’t have ${wallet.name} ?`;
         qrWpapper.style.display = "flex";
         qrImg.style.backgroundImage = `url(${wallet.qrImg})`;
         rightSegmentTitle.innerHTML = `Scan with ${wallet.name}`;
         defoultActionBox.style.display = "none";
         walletItem.classList.add("active");
-        getWalletBtn.setAttribute('href', wallet.linck)
+        getWalletBtn.setAttribute("href", wallet.linck);
       };
     }
   }
 }
+
+const chainImages = {
+  [arbitrum.id]: "./assets/arbitrum.png",
+  [mainnet.id]: "./assets/Ethereum.svg",
+  [arbitrumNova.id]: "./assets/nova.png",
+};
+
+let networkSwitchers = Array.from(
+  document.getElementsByClassName("network-switcher")
+);
+const cryptoBtnIcon = document.getElementById("crypto-custom-btn_icon");
+const circleSvg = document.getElementById("circle-svg");
+const chainsAction = () => {
+  if (chainId) {
+    chain = chains.find((ch) => ch.id === chainId);
+  }
+  networkSwitchers.forEach((networkSwitcher) => {
+    networkSwitcher.innerHTML = "";
+    const networkSwitcherButtonElement =
+      networkSwitcher.parentElement.querySelector("a.crypto-custom-btn_link");
+    const networkSwitcherImageElement =
+      networkSwitcher.parentElement.querySelector("img.crypto-custom-btn_icon");
+    function replaceChainNameInButton(newChain) {
+      if (networkSwitcherButtonElement) {
+        const chainNameToSet =
+          newChain?.id == 1
+            ? "Mainnet"
+            : newChain?.id == 42161
+            ? "Arbitrum"
+            : newChain?.id == 42170
+            ? "Arbitrum Nova"
+            : "Wrong network";
+        networkSwitcherButtonElement.textContent =
+          networkSwitcherButtonElement.textContent
+            ?.replace("Mainnet", chainNameToSet)
+            .replace(chain?.name ?? "Mainnet", chainNameToSet) ?? "";
+        if (chainNameToSet === "Wrong network" && networkBtn && circleSvg) {
+          cryptoInfo.style.display = "none";
+          networkBtn.style.backgroundColor = "#762716";
+          circleSvg.style.display = "flex";
+          cryptoBtnIcon.style.display = "none";
+          if (account) {
+            wrongNetworkWrapper.style.display = "flex";
+            imgArbinauts.style.display = "none";
+            imgSpaceship.style.display = "flex";
+          } else {
+            wrongNetworkWrapper.style.display = "none";
+            imgArbinauts.style.display = "flex";
+            imgSpaceship.style.display = "none";
+          }
+        } else if (circleSvg) {
+          circleSvg.style.display = "none";
+          cryptoBtnIcon.style.display = "block";
+          cryptoInfo.style.display = "block";
+        }
+      }
+      if (networkSwitcherImageElement && newChain) {
+        networkSwitcherImageElement.src = chainImages[newChain.id];
+      }
+      if (!account && networkBtn) {
+        networkBtn.style.display = "none";
+        userAccount.style.display = "none";
+      } else {
+        networkBtn.style.display = "flex";
+        userAccount.style.display = "flex";
+      }
+    }
+    replaceChainNameInButton(chain);
+
+    chains
+      .filter((ch) => ch.id !== chain?.id)
+      .forEach((aChain) => {
+        const liElement = document.createElement("li");
+        liElement.innerHTML = `
+      <li class="d-flex align-items-center mb-2 network">
+        <img src="${
+          chainImages[aChain.id]
+        }" alt="" width="40px" style="padding-left: 10px; max-height: 32px;">
+        <a class="dropdown-item network" href="#">${aChain.name}</a>
+      </li>
+    `;
+
+        liElement.addEventListener("click", async () => {
+          const switchNetworkResult = await switchNetwork(aChain);
+
+          replaceChainNameInButton(switchNetworkResult);
+        });
+        networkSwitcher.appendChild(liElement);
+      });
+  });
+};
+chainsAction();
+swichChainArbitrum.onclick = async () => {
+  await switchNetwork(arbitrum);
+};
+swichChainEth.onclick = async () => {
+  await switchNetwork(mainnet);
+};
+swichChainNova.onclick = async () => {
+  await switchNetwork(arbitrumNova);
+};
+
+setInterval(async () => {
+  networkSwitchers = Array.from(
+    document.getElementsByClassName("network-switcher")
+  );
+  chainsAction();
+  console.log(account, chain?.id);
+  if (
+    account &&
+    chain?.id !== mainnet.id &&
+    chain?.id !== arbitrum.id &&
+    chain?.id !== arbitrumNova.id
+  ) {
+    wrongNetworkWrapper.style.display = "flex";
+    imgArbinauts.style.display = "none";
+    imgSpaceship.style.display = "flex";
+  } else if (
+    account &&
+    (chain?.id === mainnet.id ||
+      chain?.id === arbitrum.id ||
+      chain?.id === arbitrumNova.id)
+  ) {
+    networkBtn.style.backgroundColor = "#1A1C1D";
+    const chainNameToSet =
+      chain?.id == 1
+        ? "Mainnet"
+        : chain?.id == 42161
+        ? "Arbitrum"
+        : chain?.id == 42170
+        ? "Arbitrum Nova"
+        : "Wrong network";
+    selectedChainName.innerHTML = chainNameToSet;
+    fromChainName.innerHTML = "From: " + chainNameToSet;
+    networkBtn.style.display = "flex";
+    userAccount.style.display = "flex";
+    wrongNetworkWrapper.style.display = "none";
+    imgArbinauts.style.display = "flex";
+    imgSpaceship.style.display = "none";
+  } else {
+    if (!chain) {
+      chain = chains.find((ch) => ch.id === chainId) ?? undefined;
+    }
+    wrongNetworkWrapper.style.display = "none";
+    imgArbinauts.style.display = "flex";
+    imgSpaceship.style.display = "none";
+  }
+}, 1000);
 setWallets();
