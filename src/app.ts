@@ -46,7 +46,7 @@ if (account.isConnected && connectWalletButton) {
 web3modal.subscribeEvents(async (newEvent: { type: string; name: string }) => {
   if (newEvent.type === "TRACK" && newEvent.name === "ACCOUNT_CONNECTED") {
     //  setTimeout(()=> window.location.reload(), 2000)
-    await refetchBalances();
+    // await refetchBalances();
     networkBtn!.style.display = "flex";
     userAccount!.style.display = "flex";
     if (!connectWalletButton) return;
@@ -62,7 +62,7 @@ web3modal.subscribeModal(async (newState) => {
     $("#cryptoInfo").modal("show");
 
     resetChain();
-    await refetchBalances();
+    // await refetchBalances();
   }
 });
 
@@ -89,78 +89,78 @@ type Token = {
   image?: string;
 };
 
-function addNewTokenToList({
-  symbol,
-  longName,
-  address,
-  quantity,
-  image,
-}: Token) {
-  let newItem = document.createElement("div");
+// function addNewTokenToList({
+//   symbol,
+//   longName,
+//   address,
+//   quantity,
+//   image,
+// }: Token) {
+//   let newItem = document.createElement("div");
 
-  newItem.innerHTML = `
-    <div id=${
-      address ? address[chainId] : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-    } class="d-flex align-items-center mb-3">
-      <img id=${
-        address
-          ? address[chainId]
-          : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-      } src="${image}" alt="" width="40" style="padding-left: 10px;">
-      <div id=${
-        address
-          ? address[chainId]
-          : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-      } class="d-flex align-items-center flex-column">
-        <div id=${
-          address
-            ? address[chainId]
-            : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-        } class="d-flex flex-row crypto-items">
-          <span id=${
-            address
-              ? address[chainId]
-              : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-          } class="span-crypto-name">${symbol}</span>
-          <span id=${
-            address
-              ? address[chainId]
-              : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-          } class="span-crypto-name2">${longName}</span>
-        </div>
-        <div id=${
-          address
-            ? address[chainId]
-            : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-        } class="d-flex flex-column">
-          <a class="crypto-a textDecoration" href="${
-            address
-              ? `${chain?.blockExplorers?.default.url}/token/${address[chainId]}`
-              : "#"
-          }" target="_blank" rel="noreferrer">${
-    address ? formatEtherAddressToShort(address[chainId]) : "..."
-  }</a>
-          <span id=${
-            address
-              ? address[chainId]
-              : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-          } class="card-smallText_selectToken">Arbed Uniswap List and 2 more lists</span>
-        </div>
-      </div>
-      <span id=${
-        address
-          ? address[chainId]
-          : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-      } class="span-cost">${formatEtherQuantityShort(quantity)} ${symbol}</span>
-    </div>
-  `;
-  newItem.id = address
-    ? address[chainId]
-    : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
-  newItem = newItem.children[0] as HTMLDivElement;
+//   newItem.innerHTML = `
+//     <div id=${
+//       address ? address[chainId] : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+//     } class="d-flex align-items-center mb-3">
+//       <img id=${
+//         address
+//           ? address[chainId]
+//           : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+//       } src="${image}" alt="" width="40" style="padding-left: 10px;">
+//       <div id=${
+//         address
+//           ? address[chainId]
+//           : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+//       } class="d-flex align-items-center flex-column">
+//         <div id=${
+//           address
+//             ? address[chainId]
+//             : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+//         } class="d-flex flex-row crypto-items">
+//           <span id=${
+//             address
+//               ? address[chainId]
+//               : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+//           } class="span-crypto-name">${symbol}</span>
+//           <span id=${
+//             address
+//               ? address[chainId]
+//               : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+//           } class="span-crypto-name2">${longName}</span>
+//         </div>
+//         <div id=${
+//           address
+//             ? address[chainId]
+//             : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+//         } class="d-flex flex-column">
+//           <a class="crypto-a textDecoration" href="${
+//             address
+//               ? `${chain?.blockExplorers?.default.url}/token/${address[chainId]}`
+//               : "#"
+//           }" target="_blank" rel="noreferrer">${
+//     address ? formatEtherAddressToShort(address[chainId]) : "..."
+//   }</a>
+//           <span id=${
+//             address
+//               ? address[chainId]
+//               : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+//           } class="card-smallText_selectToken">Arbed Uniswap List and 2 more lists</span>
+//         </div>
+//       </div>
+//       <span id=${
+//         address
+//           ? address[chainId]
+//           : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+//       } class="span-cost">${formatEtherQuantityShort(quantity)} ${symbol}</span>
+//     </div>
+//   `;
+//   newItem.id = address
+//     ? address[chainId]
+//     : "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+//   newItem = newItem.children[0] as HTMLDivElement;
 
-  tokenList?.appendChild(newItem);
-}
+//   tokenList?.appendChild(newItem);
+// }
 
 function formatEtherQuantityShort(quantity: string | number): string {
   const precision = 4;
@@ -256,41 +256,41 @@ const tokens: Token[] = [
 
 let tokensWithBalances: Token[] = [];
 
-refetchBalances();
+// refetchBalances();
 
-async function refetchBalances() {
-  if (tokenList) {
-    tokenList.innerHTML = "";
-  }
+// async function refetchBalances() {
+//   if (tokenList) {
+//     tokenList.innerHTML = "";
+//   }
 
-  const account = getAccount();
+//   const account = getAccount();
 
-  tokensWithBalances = await Promise.all(
-    tokens.map(async (token) => {
-      if (!account.address) {
-        console.info("Not connected to Web3 Wallet");
-        return token;
-      }
+//   tokensWithBalances = await Promise.all(
+//     tokens.map(async (token) => {
+//       if (!account.address) {
+//         console.info("Not connected to Web3 Wallet");
+//         return token;
+//       }
 
-      try {
-        const fetched = await fetchBalance({
-          address: account.address,
-          token: token.address?.[chainId],
-        });
+//       try {
+//         const fetched = await fetchBalance({
+//           address: account.address,
+//           token: token.address?.[chainId],
+//         });
 
-        return {
-          ...token,
-          quantity: fetched.formatted,
-        };
-      } catch (error) {
-        console.warn(`Could not get balance for ${token.symbol}`, error);
-        return token;
-      }
-    })
-  );
+//         return {
+//           ...token,
+//           quantity: fetched.formatted,
+//         };
+//       } catch (error) {
+//         console.warn(`Could not get balance for ${token.symbol}`, error);
+//         return token;
+//       }
+//     })
+//   );
 
-  tokensWithBalances.forEach(addNewTokenToList);
-}
+//   tokensWithBalances.forEach(addNewTokenToList);
+// }
 
 function getEtherscanTokenImageLink<T extends string>(name: T) {
   return `https://etherscan.io/token/images/${name}.png` as const;
