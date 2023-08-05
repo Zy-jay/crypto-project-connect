@@ -188,71 +188,71 @@ function formatEtherAddressToShort(address: Address | undefined) {
   return `${firstPart}...${secondPart}`;
 }
 
-const tokens: Token[] = [
-  {
-    symbol: "USDT",
-    longName: "Tether USD",
-    address: {
-      [mainnet.id]: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-      [arbitrumNova.id]: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
-      [arbitrum.id]: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
-    },
-    quantity: 0,
-    image: getEthplorerTokenImageLink("tether"),
-  },
-  {
-    symbol: "DAI",
-    longName: "Dai Stablecoin",
-    address: {
-      [mainnet.id]: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      [arbitrumNova.id]: "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+// const tokens: Token[] = [
+//   {
+//     symbol: "USDT",
+//     longName: "Tether USD",
+//     address: {
+//       [mainnet.id]: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+//       [arbitrumNova.id]: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+//       [arbitrum.id]: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+//     },
+//     quantity: 0,
+//     image: getEthplorerTokenImageLink("tether"),
+//   },
+//   {
+//     symbol: "DAI",
+//     longName: "Dai Stablecoin",
+//     address: {
+//       [mainnet.id]: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+//       [arbitrumNova.id]: "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
 
-      [arbitrum.id]: "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
-    },
-    quantity: 0,
-    image: getEthplorerTokenImageLink("mcd-dai"),
-  },
-  {
-    symbol: "USDC",
-    longName: "USD Coin",
-    address: {
-      [mainnet.id]: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-      [arbitrumNova.id]: "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
-      [arbitrum.id]: "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
-    },
-    quantity: 0,
-    image: getEthplorerTokenImageLink("usdc"),
-  },
-  {
-    symbol: "ETH",
-    longName: "Ethereum",
-    address: undefined,
-    quantity: 0,
-    image: getEthplorerTokenImageLink("eth"),
-  },
-  {
-    symbol: "WETH",
-    longName: "Wrapped Ether",
-    address: {
-      [mainnet.id]: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-      [arbitrumNova.id]: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-      [arbitrum.id]: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-    },
-    quantity: 0,
-    image: getEtherscanTokenImageLink("weth_28"),
-  },
-  {
-    symbol: "ARB",
-    longName: "Arbitrum",
-    address: {
-      [mainnet.id]: "0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1",
-      [arbitrumNova.id]: "0x912CE59144191C1204E64559FE8253a0e49E6548",
-      [arbitrum.id]: "0x912CE59144191C1204E64559FE8253a0e49E6548",
-    },
-    quantity: 0,
-    image: getEtherscanTokenImageLink("arbitrumone2_32"),
-  },
-];
+//       [arbitrum.id]: "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+//     },
+//     quantity: 0,
+//     image: getEthplorerTokenImageLink("mcd-dai"),
+//   },
+//   {
+//     symbol: "USDC",
+//     longName: "USD Coin",
+//     address: {
+//       [mainnet.id]: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+//       [arbitrumNova.id]: "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+//       [arbitrum.id]: "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+//     },
+//     quantity: 0,
+//     image: getEthplorerTokenImageLink("usdc"),
+//   },
+//   {
+//     symbol: "ETH",
+//     longName: "Ethereum",
+//     address: undefined,
+//     quantity: 0,
+//     image: getEthplorerTokenImageLink("eth"),
+//   },
+//   {
+//     symbol: "WETH",
+//     longName: "Wrapped Ether",
+//     address: {
+//       [mainnet.id]: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+//       [arbitrumNova.id]: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+//       [arbitrum.id]: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+//     },
+//     quantity: 0,
+//     image: getEtherscanTokenImageLink("weth_28"),
+//   },
+//   {
+//     symbol: "ARB",
+//     longName: "Arbitrum",
+//     address: {
+//       [mainnet.id]: "0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1",
+//       [arbitrumNova.id]: "0x912CE59144191C1204E64559FE8253a0e49E6548",
+//       [arbitrum.id]: "0x912CE59144191C1204E64559FE8253a0e49E6548",
+//     },
+//     quantity: 0,
+//     image: getEtherscanTokenImageLink("arbitrumone2_32"),
+//   },
+// ];
 
 let tokensWithBalances: Token[] = [];
 

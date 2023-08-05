@@ -310,6 +310,19 @@ export const TOKENS = [
 
   },
   {
+    symbol: "HDRN",
+    longName: "---",
+    address: {
+      [mainnet.id]: "0x3819f64f282bf135d62168C1e513280dAF905e06",
+      [arbitrumNova.id]: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+      [arbitrum.id]: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+    },
+    balance: 0,
+    image: getEthplorerTokenImageLink("HDRN"),
+    decimals: 6
+
+  },
+  {
     symbol: "DAI",
     longName: "Dai Stablecoin",
     address: {

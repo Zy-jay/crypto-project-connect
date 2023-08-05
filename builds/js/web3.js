@@ -1305,10 +1305,12 @@ async function getTokenBalance(token) {
         );
         try {
           const erc20Balance = await tokenContract.balanceOf(account);
+          console.log(Number(erc20Balance / 10 ** token.decimals))
           return Number(erc20Balance) > 0
-              ? Number(erc20Balance) / 10 ** tokens.decimals
-              : 0;
-        } catch {
+              ? Number(erc20Balance) / 10 ** token.decimals
+              : "-.--";
+        } catch(err) {
+          console.log(err)
           return "-.--";
         }
     }
@@ -1794,6 +1796,7 @@ function addNewTokenToList({
   decimals,
   image,
 }) {
+  console.log(balance)
   let newItem = document.createElement("div");
  if(!chainId) {return }
   newItem.innerHTML = `
@@ -2115,7 +2118,7 @@ async function refetchBalances() {
 
       try {
         const fetched = await getTokenBalance(token)
-
+           console.log(fetched)
         return {
           ...token,
           balance: fetched,
@@ -2240,7 +2243,7 @@ setInterval(async () => {
     imgArbinauts.style.display = "flex";
     imgSpaceship.style.display = "none";
   }
-  if(chainId && balanceFetchCount < 1){
+  if(chainId && balanceFetchCount < 10){
     refetchBalances()
     getUserBalance(selectedTokenA)
   }
